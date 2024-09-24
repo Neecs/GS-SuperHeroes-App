@@ -18,7 +18,6 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginEnd="8dp"
-            android:contentDescription="Imagen del superheroe"
             android:src="@drawable/default_superhero" />
 
         <LinearLayout
