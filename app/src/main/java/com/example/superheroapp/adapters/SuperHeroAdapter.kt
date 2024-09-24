@@ -1,5 +1,5 @@
 // SuperheroAdapter.kt
-package com.example.superheroapp
+package com.example.superheroapp.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.superheroapp.R
 import com.example.superheroapp.data.models.Superhero
 
 class SuperheroAdapter(private val superheroes: List<Superhero>) :
