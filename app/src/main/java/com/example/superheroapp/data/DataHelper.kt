@@ -17,7 +17,7 @@ fun generateSuperheroes(): List<Superhero> {
     val superheroNames = listOf("Superman", "Batman", "Wonder Woman", "Flash", "Aquaman", "Spider-Man", "Iron Man", "Captain America", "Hulk", "Thor")
     val alterNames = listOf("Clark Kent", "Bruce Wayne", "Diana Prince", "Barry Allen", "Arthur Curry", "Peter Parker", "Tony Stark", "Steve Rogers", "Bruce Banner", "Thor Odinson")
 
-    for (i in 0 until 20) {
+    for (i in 0 until 10) {
         val superhero = Superhero(
             id = i,
             name = superheroNames[i % superheroNames.size],
