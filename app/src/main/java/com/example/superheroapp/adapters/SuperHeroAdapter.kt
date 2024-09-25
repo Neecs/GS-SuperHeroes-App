@@ -1,4 +1,3 @@
-// SuperheroAdapter.kt
 package com.example.superheroapp.adapters
 
 import android.view.LayoutInflater
