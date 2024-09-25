@@ -1,4 +1,4 @@
-package com.example.superheroapp
+package com.example.superheroapp.ui.screens.superhero
 
 import android.os.Bundle
 import android.view.View
@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.superheroapp.R
 import com.example.superheroapp.adapters.SuperheroAdapter
 import com.example.superheroapp.uiStates.SuperheroUiState
 import com.example.superheroapp.viewModels.SuperheroViewModel
