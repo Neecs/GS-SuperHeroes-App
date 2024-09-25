@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                     progressBar.visibility = View.GONE
                     recyclerView.visibility = View.VISIBLE
                     errorTextView.visibility = View.GONE
-                    recyclerView.adapter = SuperheroAdapter(uiState.superheroes)
+                    recyclerView.adapter = SuperheroAdapter(uiState.superheroes, uiState.locations)
                 }
                 is SuperheroUiState.Error -> {
                     progressBar.visibility = View.GONE

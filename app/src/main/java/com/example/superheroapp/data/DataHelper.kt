@@ -51,7 +51,12 @@ fun generateLocations(): List<Location> {
         Location(id = 2, name = "Gotham City"),
         Location(id = 3, name = "Themyscira"),
         Location(id = 4, name = "Star City"),
-        Location(id = 5, name = "Atlantis")
+        Location(id = 5, name = "Atlantis"),
+        Location(id = 6, name = "New York City"),
+        Location(id = 7, name = "New York City"),
+        Location(id = 8, name = "Brooklyn"),
+        Location(id = 9, name = "Dayton"),
+        Location(id = 10, name = "Asgard")
     )
 }
 
