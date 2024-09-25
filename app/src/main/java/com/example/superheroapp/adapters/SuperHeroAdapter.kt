@@ -1,5 +1,6 @@
 package com.example.superheroapp.adapters
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,13 +8,16 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.superheroapp.PowersActivity
 import com.example.superheroapp.R
 import com.example.superheroapp.data.models.Superhero
 import com.example.superheroapp.data.models.Location
+import com.example.superheroapp.data.models.Power
 
 class SuperheroAdapter(
     private val superheroes: List<Superhero>,
-    private val locations: Map<Int, Location> // Map of location IDs to Location objects
+    private val locations: Map<Int, Location>, // Map of location IDs to Location objects
+    private val powers: Map<Int, Power> // Map of power IDs to Power objects
 ) : RecyclerView.Adapter<SuperheroAdapter.SuperheroViewHolder>() {
 
     class SuperheroViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -37,6 +41,15 @@ class SuperheroAdapter(
         holder.superheroName.text = superhero.name
         holder.realName.text = superhero.alterName
         holder.location.text = superhero.locations.joinToString { locations[it]?.name ?: "Unknown" }
+
+        holder.buttonPowers.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, PowersActivity::class.java)
+            val superheroPowers = superhero.powers.mapNotNull { powers[it] }
+            intent.putParcelableArrayListExtra("powers", ArrayList(superheroPowers))
+            context.startActivity(intent)
+        }
+
         // Configura los botones según sea necesario
     }
 

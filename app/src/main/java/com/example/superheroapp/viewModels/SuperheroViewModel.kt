@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.superheroapp.data.generateSuperheroes
 import com.example.superheroapp.data.generateLocations
+import com.example.superheroapp.data.generatePowers
 import com.example.superheroapp.uiStates.SuperheroUiState
 
 class SuperheroViewModel : ViewModel() {
@@ -20,7 +21,8 @@ class SuperheroViewModel : ViewModel() {
         try {
             val superheroes = generateSuperheroes()
             val locations = generateLocations().associateBy { it.id }
-            _uiState.value = SuperheroUiState.Success(superheroes, locations)
+            val powers = generatePowers().associateBy { it.id }
+            _uiState.value = SuperheroUiState.Success(superheroes, locations, powers)
         } catch (e: Exception) {
             _uiState.value = SuperheroUiState.Error(e.message ?: "Unknown error")
         }
