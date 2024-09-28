@@ -1,5 +1,6 @@
 package com.example.superheroapp.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,10 +25,12 @@ class EnemyAdapter(private var enemies: List<Enemy>) : RecyclerView.Adapter<Enem
 
     override fun getItemCount(): Int = enemies.size
 
-
     fun updateEnemies(newEnemies: List<Enemy>) {
         enemies = newEnemies
         notifyDataSetChanged()
+
+        // Agregar log para verificar la actualización del adaptador
+        Log.d("EnemyAdapter", "Actualizando enemigos: ${newEnemies.size}")
     }
 
     class EnemyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
