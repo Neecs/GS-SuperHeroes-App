@@ -15,7 +15,9 @@ import com.example.superheroapp.adapters.SuperheroAdapter
 import com.example.superheroapp.data.generateEnemies
 import com.example.superheroapp.uiStates.SuperheroUiState
 import com.example.superheroapp.viewModels.SuperheroViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private val viewModel: SuperheroViewModel by viewModels()
