@@ -13,6 +13,7 @@ import com.example.superheroapp.R
 import com.example.superheroapp.data.models.Superhero
 import com.example.superheroapp.data.models.Location
 import com.example.superheroapp.data.models.Power
+import com.example.superheroapp.ui.screens.enemy.EnemyListActivity
 
 class SuperheroAdapter(
     private val superheroes: List<Superhero>,
@@ -50,7 +51,11 @@ class SuperheroAdapter(
             context.startActivity(intent)
         }
 
-        // Configura los botones según sea necesario
+        holder.buttonEnemies.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, EnemyListActivity::class.java)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = superheroes.size
