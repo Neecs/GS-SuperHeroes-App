@@ -1,5 +1,6 @@
 package com.example.superheroapp.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.superheroapp.R
 import com.example.superheroapp.data.models.Enemy
 
-class EnemyAdapter(private val enemies: List<Enemy>) : RecyclerView.Adapter<EnemyAdapter.EnemyViewHolder>() {
+class EnemyAdapter(private var enemies: List<Enemy>) : RecyclerView.Adapter<EnemyAdapter.EnemyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EnemyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_enemy, parent, false)
@@ -23,6 +24,14 @@ class EnemyAdapter(private val enemies: List<Enemy>) : RecyclerView.Adapter<Enem
     }
 
     override fun getItemCount(): Int = enemies.size
+
+    fun updateEnemies(newEnemies: List<Enemy>) {
+        enemies = newEnemies
+        notifyDataSetChanged()
+
+        // Agregar log para verificar la actualización del adaptador
+        Log.d("EnemyAdapter", "Actualizando enemigos: ${newEnemies.size}")
+    }
 
     class EnemyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val enemyName: TextView = itemView.findViewById(R.id.enemy_name)

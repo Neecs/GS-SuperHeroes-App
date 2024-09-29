@@ -10,7 +10,9 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.superheroapp.R
+import com.example.superheroapp.adapters.EnemyAdapter
 import com.example.superheroapp.adapters.SuperheroAdapter
+import com.example.superheroapp.data.generateEnemies
 import com.example.superheroapp.uiStates.SuperheroUiState
 import com.example.superheroapp.viewModels.SuperheroViewModel
 
@@ -48,5 +50,8 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+
+        // Set up the RecyclerView with EnemyAdapter and generated enemies
+        recyclerView.adapter = EnemyAdapter(generateEnemies())
     }
 }
