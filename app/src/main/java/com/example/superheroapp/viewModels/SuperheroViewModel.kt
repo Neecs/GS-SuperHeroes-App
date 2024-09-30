@@ -7,8 +7,11 @@ import com.example.superheroapp.data.generateSuperheroes
 import com.example.superheroapp.data.generateLocations
 import com.example.superheroapp.data.generatePowers
 import com.example.superheroapp.uiStates.SuperheroUiState
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class SuperheroViewModel : ViewModel() {
+@HiltViewModel
+class SuperheroViewModel @Inject constructor() : ViewModel() {
     private val _uiState = MutableLiveData<SuperheroUiState>()
     val uiState: LiveData<SuperheroUiState> get() = _uiState
 
